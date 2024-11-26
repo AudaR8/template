@@ -1,0 +1,176 @@
+/* Основные стили для слайдов */
+@charset 'UTF-8';
+
+/* Стили для точек навигации и стрелок */
+.slick-dots, .slick-next, .slick-prev {
+  position: absolute;
+  display: block;
+  padding: 0;
+}
+
+/* Стиль для псевдоэлементов точек и стрелок */
+.slick-dots li button:before, .slick-next:before, .slick-prev:before {
+  font-family: slick;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Фоновая загрузка при загрузке слайдера */
+.slick-loading .slick-list {
+  background: url(../img/ajax-loader.gif) center center no-repeat #fff;
+}
+
+/* Шрифт для слайдера */
+@font-face {
+  font-family: slick;
+  font-weight: 400;
+  font-style: normal;
+  src: url(../webfonts/slick.eot);
+  src: url(../webfonts/slick.eot?#iefix) format('embedded-opentype'),
+       url(../webfonts/slick.woff) format('woff'),
+       url(../webfonts/slick.ttf) format('truetype'),
+       url(../webfonts/slick.svg#slick) format('svg');
+}
+
+/* Стиль для стрелок (следующая и предыдущая) */
+.slick-next, .slick-prev {
+  font-size: 0;
+  line-height: 0;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: 0;
+  background: 0 0;
+}
+
+/* Наведение и фокус на стрелки */
+.slick-next:focus, .slick-next:hover,
+.slick-prev:focus, .slick-prev:hover {
+  color: transparent;
+  outline: 0;
+  background: 0 0;
+}
+
+.slick-next:focus:before, .slick-next:hover:before,
+.slick-prev:focus:before, .slick-prev:hover:before {
+  opacity: 1;
+}
+
+/* Отключенные стрелки */
+.slick-next.slick-disabled:before,
+.slick-prev.slick-disabled:before {
+  opacity: .25;
+}
+
+/* Стиль стрелок */
+.slick-next:before, .slick-prev:before {
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: #fff;
+}
+
+/* Позиции стрелок */
+.slick-prev {
+  left: -25px;
+}
+
+[dir=rtl] .slick-prev {
+  right: -25px;
+  left: auto;
+}
+
+.slick-prev:before {
+  content: '←';
+}
+
+.slick-next:before, [dir=rtl] .slick-prev:before {
+  content: '→';
+}
+
+.slick-next {
+  right: -25px;
+}
+
+[dir=rtl] .slick-next {
+  right: auto;
+  left: -25px;
+}
+
+[dir=rtl] .slick-next:before {
+  content: '←';
+}
+
+/* Отступы для слайдера с точками */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
+
+/* Стили для точек */
+.slick-dots {
+  bottom: -25px;
+  width: 100%;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: 0;
+  background: 0 0;
+}
+
+/* Стили для точек при фокусе и наведении */
+.slick-dots li button:focus, .slick-dots li button:hover {
+  outline: 0;
+}
+
+.slick-dots li button:focus:before, .slick-dots li button:hover:before {
+  opacity: 1;
+}
+
+/* Стиль точек */
+.slick-dots li button:before {
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  opacity: .25;
+  color: #000;
+}
+
+/* Активная точка */
+.slick-dots li.slick-active button:before {
+  opacity: .75;
+  color: #000;
+}
